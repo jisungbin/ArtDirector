@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="io.github.jisungbin.artdirector">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="io.github.jisungbin.artdirector">
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
 </manifest>
