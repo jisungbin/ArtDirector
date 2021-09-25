@@ -1,2 +1,2 @@
 # ArtDirector
-Android Jetpack-Compose media picker with ScopedStorage
+Android Jetpack-Compose media picker
