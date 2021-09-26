@@ -10,6 +10,7 @@ import android.net.Uri
 import android.util.Size
 import java.text.SimpleDateFormat
 import java.util.Locale
+import java.util.concurrent.TimeUnit
 
 data class Media(
     val uri: Uri,
@@ -22,6 +23,17 @@ data class Media(
     fun getImageBitmap(context: Context): Bitmap? {
         return context.contentResolver.openFileDescriptor(uri, "r")?.use { parcelFileDescriptor ->
             BitmapFactory.decodeFileDescriptor(parcelFileDescriptor.fileDescriptor)
+        }
+    }
+
+    fun durationToString(): String? {
+        return duration?.toLong()?.let { duration ->
+            String.format(
+                "%d:%d",
+                TimeUnit.MILLISECONDS.toMinutes(duration),
+                TimeUnit.MILLISECONDS.toSeconds(duration) -
+                    TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(duration))
+            )
         }
     }
 

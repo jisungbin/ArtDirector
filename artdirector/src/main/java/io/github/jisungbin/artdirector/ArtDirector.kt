@@ -79,7 +79,7 @@ fun ArtDirector(
                                 colorFilter = ColorFilter.tint(Color.LightGray)
                             )
                             Text(
-                                text = media.duration.toString(),
+                                text = media.durationToString() ?: "00:00",
                                 modifier = Modifier.padding(start = 2.dp),
                                 color = Color.LightGray
                             )
