@@ -10,7 +10,7 @@ sealed class MediaType(val projection: List<String>) {
             MediaStore.Images.Media.DISPLAY_NAME,
             MediaStore.Images.Media._ID,
             MediaStore.Images.Media.SIZE,
-            MediaStore.Images.Media.SIZE,
+            MediaStore.Images.Media.DATA,
             MediaStore.Images.Media.DATE_MODIFIED
         )
     )
