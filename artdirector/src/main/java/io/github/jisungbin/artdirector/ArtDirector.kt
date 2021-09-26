@@ -45,7 +45,7 @@ fun ArtDirector(
     }
 
     LazyVerticalGrid(
-        cells = GridCells.Fixed(3),
+        cells = GridCells.Fixed(showCount),
         content = {
             items(media.sortedByDescending { it.date }) { media ->
                 if (media.type == MediaType.Image) {
@@ -59,7 +59,10 @@ fun ArtDirector(
                     val thumbnail = media.getVideoThumbnail(context)
                     val shape = RoundedCornerShape(2.dp)
 
-                    Box(modifier = Modifier.aspectRatio(1f), contentAlignment = Alignment.Center) {
+                    Box(
+                        modifier = Modifier.aspectRatio(1f),
+                        contentAlignment = Alignment.Center
+                    ) {
                         Image(
                             bitmap = thumbnail.asImageBitmap(),
                             contentDescription = null,
